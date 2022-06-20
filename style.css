@@ -1,0 +1,209 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Jacques Francois", serif;
+  background-color: rgb(209, 208, 208);
+}
+.ParaFixed {
+    height: 83px;
+    width: 90%;
+  }
+#contenedorPrincipal {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /*border: 2px solid black;*/
+}
+
+/*header*/
+.header {
+  width: 100%;
+  /*border: 2px solid yellow;*/
+  background-color: #becfab;
+  position: fixed;
+  z-index: 1030;
+}
+.ContenedorNombreRest {
+  width: 30%;
+  height: 3rem;
+}
+#nombreRestaurante {
+  font-family: "Italianno", cursive;
+  font-size: 3rem;
+  color: #44664b;
+  text-decoration: none;
+}
+ 
+.nav-link {
+  font-style: normal;
+  font-size: 1.3rem;
+  line-height: 47px;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  color: #f9fffa;
+  cursor: pointer;
+  padding-right: 1.5rem !important;
+}
+.nav-link:hover {
+  color: #44664b;
+}
+.reserva{
+  background-color: #44664b !important;
+}
+.btnPrev, .btnNext{
+  color: rgb(247, 183, 66) !important;
+  width: 45%;
+  height: 45%;
+  opacity: 1 !important;
+  box-sizing: content-box !important;
+}
+
+.carousel-control-next, .carousel-control-prev, .btnPrev::after, .btnPrev::before {
+  opacity: 1 !important;
+}
+/* fin header */
+
+
+.menuPrincipal {
+  /*border: 2px solid blue;*/
+}
+
+/* menu principal inicio */
+.galeriaDeImagenes {
+  /*border: 5px solid orange;*/
+}
+#carouselExampleFade .carousel-inner .carousel-item .d-block {
+  /*border: 2px solid blue;*/
+}
+.btn-outline-success:hover {
+  background-color: #becfab;
+  /*border-color: #becfab;*/
+}
+#leyenda {
+  background-color: rgb(247, 183, 66) !important;
+  color: #44664b ;
+  font-size: 1.2rem;
+}
+
+/* FIN menu principal inicio */
+
+/* menu principal reserva */
+.contenedorReservar{
+
+}
+.contenedorUbicacion{
+
+}
+iframe{
+  width: 100%;
+  filter: invert(100%)
+}
+.leyendaReservar{
+  /*border: 2px solid yellow;*/
+}
+.contenedorFormulario{
+ background-color:#becfab3b;
+
+ 
+}
+option[value=""][disabled] {
+  display: none;
+}
+.modal-open .container-fluid,
+.modal-open .container {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+#fecha{
+  color: #44664b;
+  font-weight:900 ;
+  /*border: 1px solid red;*/
+}
+
+/* fin menu principal reserva */
+
+#footer {
+  height: auto;
+  color: #44664b;
+  align-items: center;
+  /*border: 2px solid blueviolet;*/
+}
+.contenidoFooter { 
+  background-color: white;
+  height: auto;
+  /*border: 5px solid salmon;*/
+  font-size: 1.0rem;
+}
+.horarios {
+  /*border: 1px solid aqua;*/
+}
+.empleo {
+  /*border: 1px solid rgb(255, 98, 0);*/
+}
+#hechoPor {
+  /*border: 5px solid saddlebrown;*/
+}
+ #miMenu {
+  color: white !important;
+  font-size: 2rem !important;
+ }
+
+/* Responsive */
+@media (max-width: 765px) {
+  #nombreRestaurante {
+    font-size: 2.5rem;
+  }
+  .nav-link {
+    font-size: 1.2rem;
+    line-height: 36px;
+  }
+
+  .galeriaDeImagenes {
+    width: 100% !important;
+  }
+  #leyenda {
+    font-size: 1.0rem;
+    text-align: center;
+  }
+  .contenidoFooter{
+    flex-direction: column !important;
+    text-align: center;
+    line-height: .8rem !important;
+    /*padding: 10px 20px 0 20px!important;*/
+    /*border: 5px solid green;*/
+    box-sizing: content-box;
+}
+
+.btnPrev, .btnNext{
+  color: rgb(247, 183, 66) !important;
+  width: 35% !important;
+  height: 35% !important;
+  padding: 20% !important;
+  opacity: 1 !important;
+}
+
+.contenedorUbicacion{
+  width: 100% !important;
+  height: 10% !important;
+}
+iframe{
+  width: 100%;
+  height: inherit;
+}
+.leyendaReservar h3, .leyendaReservar h5{
+  font-size: 1.2rem !important;
+}
+.contenedorReservar{
+  width: 100% !important;
+}
+.reserva {
+  padding: 5px !important;
+  font-size: .9rem;
+}
+
+  }
+
