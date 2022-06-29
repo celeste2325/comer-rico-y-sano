@@ -104,8 +104,6 @@ iframe{
 }
 .contenedorFormulario{
  background-color:#becfab3b;
-
- 
 }
 option[value=""][disabled] {
   display: none;
@@ -125,6 +123,17 @@ option[value=""][disabled] {
 }
 
 /* fin menu principal reserva */
+
+/*menu principal sobreNosotros*/
+#sobreNosotrosContenido{
+  font-size: 2rem;
+  font-family: "Jacques Francois", serif;
+  color: #44664b;
+}
+#sobreNosotrosContenido h2{
+  font-size: 1.6rem;
+}
+/*fin menu principal sobre nosotros*/
 
 #footer {
   height: auto;
@@ -204,6 +213,14 @@ iframe{
   padding: 5px !important;
   font-size: .9rem;
 }
-
+#sobreNosotrosContenido{
+  font-size: 1.2rem;
+}
+#sobreNosotrosContenido h2{
+  font-size: 1rem;
+}
+.contenedorFormulario{
+  padding: 10px !important;
+ }
   }
 
