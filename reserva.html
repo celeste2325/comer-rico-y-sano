@@ -44,7 +44,7 @@
                             <a class="nav-link" href="sobreNosotros.html">sobre
                                 nosotros</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="contenedorReservar w-50 d-flex flex-column align-items-center">
 
                 <div class="contenedorFormulario w-75 p-5 pt-2 pb-2 m-2 border border-success rounded-top">
-                    <form>
+                    <form id="ReservarForm">
                         <div class="leyendaReservar text-center">
                             <h3>Reserva</h3>
                             <h5>Ya sólo queda reservar tu mesa</h5>
@@ -64,32 +64,51 @@
                         </div>
 
                         <div class="mb-3 form-row align-items-center">
-                            <button class="w-100 col-sm-3 my-1 btn btn-block btn-outline-secondary" type="button" id="fecha">Seleccione la fecha</button>
-                            <input id="campoFecha" type="text" class="col-sm-3 my-1 form-control text-center" readonly
-                                aria-label="Example text with button addon" aria-describedby="button-addon1">
-                          
+                            <button onclick="addModal()" class="w-100 col-sm-3 my-1 btn btn-block btn-outline-secondary"
+                                type="button" id="fecha">Seleccione la fecha</button>
+                            <input id="campoFecha" type="text"
+                                class="dato1 col-sm-3 my-1 form-control text-center is-invalid" readonly
+                                aria-label="Example text with button addon" aria-describedby="button-addon1"
+                                placeholder="fecha seleccionada">
+                            <div id="validationCampoFecha" class="invalid-feedback">
+                                campo obligatorio.
+                            </div>
+
                         </div>
                         <div class="mb-3">
-                            <select id="horario" class="form-select text-center">
+                            <select onchange="validarCamposFormulario(), habilitarBotonReserva()" id="horario"
+                                class="dato2 form-select text-center is-invalid" disabled>
                                 <option value="" disabled selected>Horario</option>
-                                <option>...</option>
                             </select>
+                            <div id="validationCampoHorario" class="invalid-feedback">
+                                primero seleccione la fecha.
+                            </div>
+                            <div id="obligatorio" class="invalid-feedback">
+                                campo obligatorio.
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <select id="personas" class="form-select text-center">
+                            <select onchange="habilitarBotonReserva(),validarCamposFormulario()" id="personas"
+                                class="dato3 form-select text-center is-invalid">
                                 <option value="" disabled selected>Personas</option>
-                                <option >1 Persona</option>
-                                <option >2 Personas</option>
-                                <option >3 Personas</option>
-                                <option >4 Personas</option>
-                                <option >5 Personas</option>
+                                <option>1 Persona</option>
+                                <option>2 Personas</option>
+                                <option>3 Personas</option>
+                                <option>4 Personas</option>
+                                <option>5 Personas</option>
                             </select>
+                            <div id="validationCampoPersona" class="invalid-feedback">
+                                campo obligatorio.
+                            </div>
                         </div>
 
-                        <button type="submit"
+                        <button type="button"
+                            onclick="addModalIngresarInformacion(), detalle(), habilitarBotonReserveAhora()"
+                            id="reservar"
                             class="w-100 shadow-lg d-grid gap-2 col-6 mx-auto btn btn-success reserva m-3 p-2">RESERVAR</button>
 
                     </form>
+
                 </div>
 
             </div>
@@ -128,7 +147,7 @@
         </footer>
     </div>
 
-    <div class="modal fade" tabindex="-1" id="calendar" id="staticBackdrop" data-bs-backdrop="static">
+    <div class="modal fade" tabindex="-1" id="calendar" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down modal-fullscreen-sm-down">
             <div class="modal-content">
                 <div class="modal-header">
@@ -140,10 +159,93 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" tabindex="-1" id="ingresarInformacion" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button onclick="resetForm()" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <form id="datosReservaForm" class="p-2 m-2 border border-success rounded-top">
+                        <div id="detalleReserva" class="leyendaReservar text-center">
+                            <h3 id="tituloIngreseReserva">Ingresa tu información</h3>
+                            <h5>Detalles de la reserva:</h5>
+                        </div>
+
+                        <div class="mb-3 text-center">
+                            <input onchange="validarCamposFormularioReserveAhora(),habilitarBotonReserveAhora()"
+                                type="text" class="form-control is-invalid" id="nombreForm" required
+                                placeholder="Nombre">
+                            <div id="obligatorioNombreForm" class="invalid-feedback">
+                                campo obligatorio.
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3 text-center">
+                            <input onchange="validarCamposFormularioReserveAhora(),habilitarBotonReserveAhora()"
+                                placeholder="apellido" type="text" class="form-control is-invalid" id="apellido"
+                                required>
+                            <div id="obligatorioApellido" class="invalid-feedback">
+                                campo obligatorio.
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3 text-center">
+                            <div class="input-group ">
+                                <span class="input-group-text">@</span>
+                                <input onchange="validarCamposFormularioReserveAhora(),habilitarBotonReserveAhora()"
+                                    id="email" placeholder="email" type="text" class="form-control is-invalid"
+                                   aria-describedby="inputGroupPrepend2" required>
+                            </div>
+                            <div id="obligatorioEmail" class="invalid-feedback">
+                                campo obligatorio.
+                            </div>
+                        </div>
+
+
+                        <button onclick="ReservaRecibida(), habilitarModalRealizadaLaReserva()" type="button"
+                            id="btnReservarAhora"
+                            class="w-100 shadow-lg d-grid gap-2 col-6 mx-auto btn btn-success reserva m-3 p-2">Reserve
+                            ahora</button>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" onclick="resetForm()" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="realizadaLaReserva" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button onclick="resetForm()" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <div id="reservaRealizada" class="leyendaReservar text-center">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" onclick="resetForm()" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- jquery-->
     <script src="libs/jquery-3.6.0.min.js"></script>
