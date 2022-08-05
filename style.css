@@ -1,8 +1,17 @@
+:root{
+  --header: #becfab;
+  --backgroundPagina: rgb(209, 208, 208);
+  --black: black;
+  --white: white;
+  --colorPrincipal: #44664b; 
+  --fontPrincipal: "Jacques Francois", serif;
+}
 body {
   padding: 0;
   margin: 0;
-  font-family: "Jacques Francois", serif;
-  background-color: rgb(209, 208, 208);
+  font-family: var(--fontPrincipal);
+  color: var(--black);
+  background-color: var(--backgroundPagina);
 }
 .ParaFixed {
   height: 83px;
@@ -19,7 +28,7 @@ body {
   width: 100%;
   height: 5rem;
   box-sizing: border-box;
-  background-color: #becfab;
+  background-color: var(--header);
   position: fixed;
   z-index: 1030;
 }
@@ -31,7 +40,7 @@ body {
 #nombreRestaurante {
   font-family: "Italianno", cursive;
   font-size: 2.5rem;
-  color: #44664b;
+  color: var(--colorPrincipal);
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -48,10 +57,10 @@ body {
   padding-right: 1.5rem !important;
 }
 .nav-link:hover {
-  color: #44664b;
+  color: var(--colorPrincipal);
 }
 .reserva {
-  background-color: #44664b !important;
+  background-color: var(--colorPrincipal) !important;
 }
 .btnPrev,
 .btnNext {
@@ -76,19 +85,17 @@ body {
 
 .titulo {
   color: IndianRed;
-  background-color: white;
+  background-color: var(--white);
   text-align: center;
-  border: 1px solid white;
+  margin-bottom: 0;
   position: sticky;
   top: 85px;
   z-index: 2;
 }
-.btn-outline-success:hover {
-  background-color: #becfab;
-}
+
 #leyenda {
   background-color: rgb(247, 183, 66) !important;
-  color: #44664b;
+  color: var(--colorPrincipal);
   font-size: 1.2rem;
 }
 
@@ -117,7 +124,7 @@ option[value=""][disabled] {
   filter: blur(2px);
 }
 #fecha {
-  color: #44664b;
+  color: var(--colorPrincipal);
   font-weight: 900;
 }
 
@@ -126,8 +133,7 @@ option[value=""][disabled] {
 /*menu principal sobreNosotros*/
 #sobreNosotrosContenido {
   font-size: 2rem;
-  font-family: "Jacques Francois", serif;
-  color: #44664b;
+  color: var(--colorPrincipal);
 }
 #sobreNosotrosContenido h2 {
   font-size: 1.6rem;
@@ -136,16 +142,16 @@ option[value=""][disabled] {
 
 #footer {
   height: auto;
-  color: #44664b;
+  color: var(--colorPrincipal);
   align-items: center;
 }
 .contenidoFooter {
-  background-color: white;
+  background-color: var(--white);
   height: auto;
   font-size: 1rem;
 }
 #miMenu {
-  color: white !important;
+  color: var(--white) !important;
   font-size: 2rem !important;
 }
 #obligatorio {
