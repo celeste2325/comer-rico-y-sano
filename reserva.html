@@ -19,9 +19,10 @@
 <body>
     <div class="container-fluid d-flex flex-column justify-content-between p-0" id="contenedorPrincipal">
         <nav class="navbar navbar-expand-lg header row m-0">
-           <div class="container-fluid">
+            <div class="container-fluid">
                 <div id="contenedorLogoNav" class="contenedorLogo d-flex align-items-center">
-                    <a href="index.html" class="linkLogo"><img class="nombreLogo" src="imagenes/logo1.png" alt="logo del restaurante"></a>
+                    <a href="index.html" class="linkLogo"><img class="nombreLogo" src="imagenes/logo1.png"
+                            alt="logo del restaurante"></a>
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -52,36 +53,35 @@
 
         <div class="ParaFixed"><span></span></div>
 
-        <main class="container-fluid menuPrincipal d-flex flex-column align-items-center justify-content-between">
-            <div class="contenedorReservar w-50 d-flex flex-column align-items-center">
+        <main class="w-50 container-fluid menuPrincipal d-flex flex-column align-items-center justify-content-between">
+            <div class="contenedorReservar w-100 d-flex flex-column align-items-center m-2">
+                <div class="w-75 leyendaReservar text-center  border border-success rounded-top border-bottom-0 p-2">
+                    <div id="contenedorLogoEnReserva">
+                        <img class="nombreLogo" src="imagenes/logo1.png" alt="logo del restaurante">
+                    </div>
+                    <h5>Ya sólo queda reservar tu mesa</h5>
+                    <h5>¡Tú y tus amigos son bienvenidos a Comer Rico y Sano!</h5>
+                </div>
 
-                <div class="contenedorFormulario w-75 p-5 pt-2 pb-2 m-2 border border-success rounded-top">
+                <div class="contenedorFormulario w-75  border border-success border-top-0 p-2">
                     <form id="ReservarForm">
-                        <div class="leyendaReservar text-center">
-                            <div id="contenedorLogoEnReserva">
-                                <img class="nombreLogo" src="imagenes/logo1.png" alt="logo del restaurante">
-                               <!-- <a class="navbar-brand" id="nombreRestaurante" href="index.html">Comer rico y sano</a>-->
-                            </div>
-                            <h5>Ya sólo queda reservar tu mesa</h5>
-                            <h5>¡Tú y tus amigos son bienvenidos a Comer Rico y Sano!</h5>
-                        </div>
-
                         <div class="mb-3 form-row align-items-center">
                             <button onclick="addModal()" class="w-100 col-sm-3 my-1 btn btn-block btn-outline-secondary"
                                 type="button" id="fecha">Seleccione la fecha</button>
-                            <input id="campoFecha" type="text"
+                            <!--<input id="campoFecha" type="text"
                                 class="dato1 col-sm-3 my-1 form-control text-center is-invalid" readonly
                                 aria-label="Example text with button addon" aria-describedby="button-addon1"
                                 placeholder="fecha seleccionada">
                             <div id="validationCampoFecha" class="invalid-feedback">
                                 campo obligatorio.
-                            </div>
+                            </div>-->
 
                         </div>
                         <div class="mb-3">
+                            <label for="horario">Horario</label>
                             <select onchange="validarCamposFormulario(), habilitarBotonReserva()" id="horario"
                                 class="dato2 form-select text-center is-invalid" disabled>
-                                <option value="" disabled selected>Horario</option>
+                                <option value="" disabled selected>Seleccione el horario</option>
                             </select>
                             <div id="validationCampoHorario" class="invalid-feedback">
                                 primero seleccione la fecha.
@@ -91,9 +91,10 @@
                             </div>
                         </div>
                         <div class="mb-3">
+                            <label for="personas">Personas</label>
                             <select onchange="habilitarBotonReserva(),validarCamposFormulario()" id="personas"
                                 class="dato3 form-select text-center is-invalid">
-                                <option value="" disabled selected>Personas</option>
+                                <option value="" disabled selected>Seleccione la cantidad de personas</option>
                                 <option>1 Persona</option>
                                 <option>2 Personas</option>
                                 <option>3 Personas</option>
@@ -109,13 +110,10 @@
                             onclick="addModalIngresarInformacion(), detalle(), habilitarBotonReserveAhora()"
                             id="reservar"
                             class="w-100 shadow-lg d-grid gap-2 col-6 mx-auto btn btn-success reserva m-3 p-2">RESERVAR</button>
-
                     </form>
-
                 </div>
-
             </div>
-            <div class="contenedorUbicacion w-50 d-flex justify-content-center">
+            <div class="contenedorUbicacion w-100 d-flex justify-content-center">
                 <iframe class="w-75 rounded-top pb-2"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.987083434136!2d-58.44146058569318!3d-34.57919338046582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb594a7835335%3A0x3d6ea6be1e6088bf!2sCosta%20Rica%206038%2C%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1655596076723!5m2!1sen!2sar"
                     width="540" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -206,7 +204,7 @@
                                 <span class="input-group-text">@</span>
                                 <input onchange="validarCamposFormularioReserveAhora(),habilitarBotonReserveAhora()"
                                     id="email" placeholder="email" type="text" class="form-control is-invalid"
-                                   aria-describedby="inputGroupPrepend2" required>
+                                    aria-describedby="inputGroupPrepend2" required>
                             </div>
                             <div id="obligatorioEmail" class="invalid-feedback">
                                 campo obligatorio.

@@ -225,8 +225,12 @@ option[value=""][disabled] {
   #sobreNosotrosContenido h2 {
     font-size: 1rem;
   }
-  .contenedorFormulario {
-    padding: 10px !important;
+  .contenedorFormulario, .leyendaReservar, .menuPrincipal{
+    width: 100% !important;
+  }
+  .contenedorReservar {
+    padding: 0px !important;
+    width: 75% !important;
   }
   #contenedorLogoNav .nombreLogo{
     display: none;
